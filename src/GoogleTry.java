@@ -48,7 +48,7 @@ public class GoogleTry {
 		br.close();
 	}
 
-    public String toStringPaint(boolean [] [] matriz){
+    public void toStringPaint(boolean [] [] matriz){
 	for (int i = 0; i < matriz.length; i++){
 	    for (int j = 0; j < matriz[0].length; j++){
 		if (matriz[i][j])
