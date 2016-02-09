@@ -33,7 +33,7 @@ public class GoogleTry {
 	public void copy(boolean[][] matriz) {
 		boolean[][] copy = new boolean[matriz.length][matriz[0].length];
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz[0].length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
 				copy[i][j] = matriz[i][j];
 			}
 		}
@@ -47,5 +47,17 @@ public class GoogleTry {
 		}
 		br.close();
 	}
+
+    public String toStringPaint(boolean [] [] matriz){
+	for (int i = 0; i < matriz.length; i++){
+	    for (int j = 0; j < matriz[0].length; j++){
+		if (matriz[i][j])
+		    System.out.print("#");
+		else
+		    System.out.print(".");
+	    }
+	    System.out.println("");
+	}
+    }
 
 }
