@@ -10,25 +10,37 @@ public class GoogleTry {
 		this.N = N;
 		this.M = M;
 		this.painting = new boolean[N][M];
-
 	}
+
 	
-	public static void main(String[] args){
-		GoogleTry t = new GoogleTry(10, 10);
-		try {
-			t.readFile("/home/carlos/prueba.txt");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
-	public int getRows() {
-		return this.N;
+
+
+public static void main(String[] args) {
+	GoogleTry t = new GoogleTry(10, 10);
+	try {
+		t.readFile("/home/carlos/prueba.txt");
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
+}
+
+		public int getRows() {
+	return this.N;
+}
 
 	public int getColumns() {
 		return this.M;
+	}
+
+	public void copy(boolean[][] matriz) {
+		boolean[][] copy = new boolean[matriz.length][matriz[0].length];
+		for (int i = 0; i < matriz.length; i++) {
+			for (int j = 0; j < matriz[0].length; i++) {
+				copy[i][j] = matriz[i][j];
+			}
+		}
 	}
 
 	public void readFile(String path) throws IOException {
@@ -38,4 +50,5 @@ public class GoogleTry {
 			System.out.println(sCurrentLine);
 		}
 	}
+
 }
