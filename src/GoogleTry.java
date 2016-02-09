@@ -25,6 +25,7 @@ public class GoogleTry {
 				imagen.rellenar(sCurrentLine, i, imagen.getColumns());
 				i++;
 			}
+			imagen.toStringPaint(imagen.getImagen());
 			br.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -39,11 +40,15 @@ public class GoogleTry {
 	public int getColumns() {
 		return this.M;
 	}
+	
+	public boolean[][] getImagen(){
+		return this.painting;
+	}
 
 	public void copy(boolean[][] matriz) {
 		boolean[][] copy = new boolean[matriz.length][matriz[0].length];
 		for (int i = 0; i < matriz.length; i++) {
-			for (int j = 0; j < matriz[0].length; i++) {
+			for (int j = 0; j < matriz[0].length; j++) {
 				copy[i][j] = matriz[i][j];
 			}
 		}
@@ -60,11 +65,25 @@ public class GoogleTry {
 		br.close();
 	}
 
+
 	public void rellenar(String cadena, int fila, int columna){
 		for(int i = 0; i < columna ; i++){
 			if(cadena.charAt(i) == '#') this.painting[fila][i] = true;
 			else this.painting[fila][i] = false ;
 		}
 	}
+
+	public void toStringPaint(boolean [] [] matriz){
+		for (int i = 0; i < matriz.length; i++){
+			for (int j = 0; j < matriz[0].length; j++){
+				if (matriz[i][j])
+					System.out.print("#");
+				else
+					System.out.print(".");
+			}
+			System.out.println("");
+		}
+	}
+
 
 }

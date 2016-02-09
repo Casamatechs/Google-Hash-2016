@@ -1,0 +1,24 @@
+* Google Hash Code - 2016
+
+** Algoritmo de rellenado
+
+1. Sobre una matriz se recorre de uno en uno desde arriba a la
+   izquierda las casillas hasta encontar una coloreada.
+2. Comenzamos pensando en el cuadrado 3x3.
+   1. Si se sale de los límites, vamos al PUNTO 3.
+   2. Miramos el siguiente en tamaño (3x3, 5x5, 7x7,...,[2N-1]x[2N-1])
+      1. Comprobamos si el porcentaje de pintado es mejor que el
+         anterior cuadrado.
+      2. Si es mejor, vamos al PUNTO 2.2
+      3. Si es peor, reservamos el anterior cuadrado.
+3. Avanzamos a la siguiente casilla original coloreada.
+   1. Si hemos acabado, vamos al punto 4
+   2. Si no, vamos al PUNTO 2.
+
+4. Sobre una matriz se recorre de uno en uno desde arriba a la
+   izquierda las casillas hasta encontar una coloreada.
+5. Comenzamos pensando en una línea horizontal.
+   1. Miramos hasta qué porcentaje alargándola es el óptimo de coloración.
+6. Avanzamos a la siguiente casilla coloreada original.
+
+PENDIENTE...
