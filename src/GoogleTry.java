@@ -22,11 +22,7 @@ public class GoogleTry {
 			int row = Integer.parseInt(cr[0]);
 			int column = Integer.parseInt(cr[1]);
 			GoogleTry imagen = new GoogleTry(row, column);
-			int i = 0;
-			while ((sCurrentLine = br.readLine()) != null) {
-				imagen.rellenar(sCurrentLine, i, imagen.getColumns());
-				i++;
-			}
+			imagen.readFile(br);
 			imagen.toStringPaint(imagen.getImagen());
 			br.close();
 		} catch (IOException e) {
@@ -56,19 +52,17 @@ public class GoogleTry {
 		}
 	}
 
-	public void readFile(String path) throws IOException {
+	public void readFile(BufferedReader bf) throws IOException {
 		String sCurrentLine;
 		int i = 0;
-		BufferedReader br = new BufferedReader(new FileReader(path));
-		while ((sCurrentLine = br.readLine()) != null) {
-			rellenar(sCurrentLine, i, getColumns());
+		while ((sCurrentLine = bf.readLine()) != null) {
+			rellenar(sCurrentLine, i, this.M);
 			i++;
 		}
-		br.close();
 	}
 
 
-	public void rellenar(String cadena, int fila, int columna){
+	private void rellenar(String cadena, int fila, int columna){
 		for(int i = 0; i < columna ; i++){
 			if(cadena.charAt(i) == '#') {
 				this.painting[fila][i] = true;
