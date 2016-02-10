@@ -16,7 +16,7 @@ public class GoogleTry {
 
 	public static void main(String[] args) {
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("/home/carlos/prueba.txt"));
+			BufferedReader br = new BufferedReader(new FileReader(args[0]));
 			String sCurrentLine = br.readLine();
 			String [] cr = sCurrentLine.split(" ");
 			int row = Integer.parseInt(cr[0]);
