@@ -1,1 +1,0 @@
-# Google-Hash-2016
