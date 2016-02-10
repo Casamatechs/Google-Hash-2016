@@ -22,3 +22,15 @@
 6. Avanzamos a la siguiente casilla coloreada original.
 
 PENDIENTE...
+
+** Algoritmo de rellenado 2
+
+*** 1. Se crea una matriz de copia identica a la original en dimensiones, pero con todos sus campos a false.
+*** 2. Se va recorriendo la matriz por filas, de izquierda a derecha y de arriba abajo.
+*** 3. Una vez se encuentra una casilla coloreada en la matriz original, se inicia la busqueda de casillas coloreadas adyacentes.
+**** 1. Primero buscamos un recuadro 3*3. En caso de encontrar 7 o más casillas true, lo coloreamos.
+**** 2. Si no hay 7 o más casillas en el recuadro, recorremos la fila de la casilla referencia.
+**** 3. En caso de no encontrar casillas adyacentes en la fila, las buscaremos en la columna.
+*** 4. Avanzamos a la siguiente casilla en la matriz original que esté a true y no haya sido copiada. Se repite el paso 3.
+*** 5. Una vez hemos copiado todas las casillas true, tenemos que devolver a false todas aquellas que se hayan copiado dentro de la creación de cuadrados.
+
