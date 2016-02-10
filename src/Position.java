@@ -26,3 +26,4 @@ public class Position {
 	public int getColumna (){
 		return this.columna;
 	}
+}
