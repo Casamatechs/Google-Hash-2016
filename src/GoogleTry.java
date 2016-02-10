@@ -4,12 +4,14 @@ public class GoogleTry {
 
 	private int N;
 	private int M;
+	private int contador;
 	private boolean[][] painting;
 
 	public GoogleTry(int N, int M) {
 		this.N = N;
 		this.M = M;
 		this.painting = new boolean[N][M];
+		this.contador = 0;
 	}
 
 	public static void main(String[] args) {
@@ -40,7 +42,7 @@ public class GoogleTry {
 	public int getColumns() {
 		return this.M;
 	}
-	
+
 	public boolean[][] getImagen(){
 		return this.painting;
 	}
@@ -68,7 +70,10 @@ public class GoogleTry {
 
 	public void rellenar(String cadena, int fila, int columna){
 		for(int i = 0; i < columna ; i++){
-			if(cadena.charAt(i) == '#') this.painting[fila][i] = true;
+			if(cadena.charAt(i) == '#') {
+				this.painting[fila][i] = true;
+				this.contador++;
+			}
 			else this.painting[fila][i] = false ;
 		}
 	}
